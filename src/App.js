@@ -1,24 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import useStore from './store';
+import Points from './Points';
 
 function App() {
+
+  const { pointsA, pointsB, status, increasePoints, resetPoints } = useStore();
+
   return (
+   
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <h1>{status}</h1>
+    <div className="character">
+      <h2>Character A</h2>
+      <Points points ={pointsA}  />
+      {/* <div className='points'> 
+      {Array.from({ length: pointsA }).map((_, index) => (
+            <div key={index} className="block"></div>
+          ))}
+        </div> */}
+
+
     </div>
+    <div className="character">
+      <h2>Character B</h2>
+      <div className='points'> 
+      {Array.from({ length: pointsB }).map((_, index) => (
+            <div key={index} className="block"></div>
+          ))}
+        </div>
+
+   
+    </div>
+    <button onClick={increasePoints}>Race</button>
+    {(pointsA > 1 || pointsB > 1) && <button onClick={resetPoints}>Reset</button>}
+  </div>
+  
+  
   );
 }
 

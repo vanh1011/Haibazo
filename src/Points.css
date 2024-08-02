@@ -1,0 +1,12 @@
+.points {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-start;    
+  }
+  
+  .block {
+    width: 30px;
+    height: 10px;
+    background-color: green;
+    margin: 2px;
+  }
