@@ -14,23 +14,10 @@ function App() {
     <div className="character">
       <h2>Character A</h2>
       <Points points ={pointsA}  />
-      {/* <div className='points'> 
-      {Array.from({ length: pointsA }).map((_, index) => (
-            <div key={index} className="block"></div>
-          ))}
-        </div> */}
-
-
     </div>
     <div className="character">
       <h2>Character B</h2>
-      <div className='points'> 
-      {Array.from({ length: pointsB }).map((_, index) => (
-            <div key={index} className="block"></div>
-          ))}
-        </div>
-
-   
+      <Points points ={pointsB}  />
     </div>
     <button onClick={increasePoints}>Race</button>
     {(pointsA > 1 || pointsB > 1) && <button onClick={resetPoints}>Reset</button>}
